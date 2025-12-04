@@ -3,6 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title> Job Application</title>
+    <script>
+        function clickaction(e){
+            const name=document.getElementById("fullname").value;
+            const email=document.getElementById("email").value;
+            const phone=document.getElementById("phone").value;
+            const role=document.getElementById("role").value;
+
+            if(name===""||email===""||phone===""||role===""){
+                alert("Fill all Elements");
+            }
+
+            console.log(name);
+            console.log(email);
+            console.log(phone);
+            console.log(role);
+
+        }
+    </script>
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -117,7 +136,7 @@
         <label for="resume">Upload Resume (PDF):</label>
         <input type="file" id="resume" name="resume" accept=".pdf">
 
-        <button type="submit">Submit Application</button>
+        <button type="submit" onclick="clickaction(Event)">Submit Application</button>
     </form>
 
 </body>
