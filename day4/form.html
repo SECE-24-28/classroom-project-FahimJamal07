@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Simple Form</title>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+        <script>
+            function getdata(e){
+                
+                const name=document.getElementById("name").value;
+                const email=document.getElementById("email").value;
+                console.log(name);
+                console.log(email);
+                if(email===""){
+                    alert("Enter email");
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <label>Name:</label>
+        <input type="text" id="name" placeholder="Enter Name"><br>
+        <label>Email:</label>
+        <input type="email" id="email" placeholder="name@example.com"><br>
+        <button type="submit" onclick="getdata(Event)">Submit</button>
+    </body>
+</html>

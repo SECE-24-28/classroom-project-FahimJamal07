@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <style>
+       
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #222;
+            color: #fff;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        
+        .gallery-container {
+            display: flex;          
+            flex-wrap: wrap;        
+            gap: 15px;              
+            justify-content: center; 
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        
+        .card {
+            
+            flex: 1 1 300px; 
+            height: 250px;
+            position: relative;
+            overflow: hidden; 
+            border-radius: 6px;
+            cursor: pointer;
+            
+            
+            opacity: 0; 
+            animation: slideIn 0.8s ease-out forwards;
+        }
+
+        
+        .card:nth-child(1) { animation-delay: 0.1s; }
+        .card:nth-child(2) { animation-delay: 0.2s; }
+        .card:nth-child(3) { animation-delay: 0.3s; }
+        .card:nth-child(4) { animation-delay: 0.4s; }
+        .card:nth-child(5) { animation-delay: 0.5s; }
+        .card:nth-child(6) { animation-delay: 0.6s; }
+
+        
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            
+            
+            transition: transform 0.4s ease, filter 0.4s ease;
+        }
+
+        
+        .card:hover img {
+            transform: scale(1.15); 
+            filter: brightness(1.2); 
+        }
+
+        
+        .caption {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            
+            
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover .caption {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px); 
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);   
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Flex Gallery</h1>
+
+    <div class="gallery-container">
+        
+        <div class="card">
+            <img src="image.png" alt="Nature 1">
+            <div class="caption">Misty Forest</div>
+        </div>
+
+        <div class="card">
+            <img src="image2.jpg" alt="Nature 2">
+            <div class="caption">Deep Woods</div>
+        </div>
+
+        <div class="card">
+            <img src="image3.jpg" alt="Nature 3">
+            <div class="caption">Mountain Ridge</div>
+        </div>
+
+        <div class="card">
+            <img src="image4.jpg" alt="Car1">
+            <div class="caption">Bugatti chiron</div>
+        </div>
+
+        <div class="card">
+            <img src="image5.jpg" alt="Nature 5">
+            <div class="caption">Bugatti Tourbillon</div>
+        </div>
+
+        <div class="card">
+            <img src="image6.jpg" alt="Nature 6">
+            <div class="caption">Stormy Skies</div>
+        </div>
+
+    </div>
+
+</body>
+</html>
